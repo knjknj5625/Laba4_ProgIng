@@ -63,7 +63,7 @@ class TestTitanicAnalysis:
     def test_3(self):
         """Макс возраст по классам"""
         test_data = pd.DataFrame({
-            'Age': [10, 5, 15, 8, 12],
+            'Age': [17, 5, 15, 8, 12],
             'Survived': [0, 0, 0, 0, 0],
             'Embarked': ['C', 'Q', 'S', 'C', 'Q'],
             'Pclass': [1, 1, 1, 2, 3]  
@@ -72,7 +72,8 @@ class TestTitanicAnalysis:
         counts, total, max_ages = children(test_data)
         
         assert max_ages['C'] == 17
-        assert max_ages['Q'] == 8
+        assert max_ages['Q'] == 12
         assert max_ages['S'] == 15
 if __name__ == "__main__":
+
     pytest.main([__file__, "-v"])        
